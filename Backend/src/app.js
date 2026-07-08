@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
+import workflowRoutes from "./routes/workflow.routes.js";
 
 const app = express();
 
@@ -11,5 +12,6 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/workflows", workflowRoutes);
 
 export default app;
