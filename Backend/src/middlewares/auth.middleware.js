@@ -1,16 +1,13 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.models.js";
+import ApiError from "../utils/ApiError.js";
 
 const authenticate = async (req, res, next) => {
   try {
-    
     const token = req.cookies.token;
 
     if (!token) {
-      return res.status(401).json({
-        success: false,
-        message: "Authentication required. Please login.",
-      });
+      return next(new ApiError(401, "Authentication required. Please login."));
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -18,20 +15,14 @@ const authenticate = async (req, res, next) => {
     const user = await User.findById(decoded.id);
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "User not found.",
-      });
+      return next(new ApiError(404, "User not found."));
     }
 
     req.user = user;
 
     next();
   } catch (error) {
-    return res.status(401).json({
-      success: false,
-      message: "Invalid or expired token.",
-    });
+    return next(new ApiError(401, "Invalid or expired token."));
   }
 };
 

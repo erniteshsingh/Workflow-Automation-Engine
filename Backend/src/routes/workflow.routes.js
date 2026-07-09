@@ -2,10 +2,17 @@ import express from "express";
 
 import workflowController from "../controllers/workflow.controller.js";
 import authenticate from "../middlewares/auth.middleware.js";
+import validate from "../middlewares/validate.middleware.js";
+import createWorFlowShema from "../validators/WorkFlow.validate.js";
 
 const router = express.Router();
 
-router.post("/", authenticate, workflowController.createWorkflow);
+router.post(
+  "/",
+  authenticate,
+  validate(createWorFlowShema),
+  workflowController.createWorkflow,
+);
 
 router.get("/", authenticate, workflowController.getMyWorkflows);
 

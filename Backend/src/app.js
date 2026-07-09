@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
+import errorHandler from "./middlewares/error.middleware.js";
 import authRoutes from "./routes/auth.routes.js";
 import workflowRoutes from "./routes/workflow.routes.js";
 
@@ -13,5 +14,7 @@ app.use(cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/workflows", workflowRoutes);
+
+app.use(errorHandler);
 
 export default app;
