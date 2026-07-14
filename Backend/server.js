@@ -1,9 +1,10 @@
 import dotenv from "dotenv";
-import app from "./src/app.js";
-import connectDB from "./src/config/database.config.js";
 
 dotenv.config();
-console.log(process.env.MONGODB_URI);
+
+import app from "./src/app.js";
+import connectDB from "./src/config/database.config.js";
+import "./src/config/redis.js";
 
 const PORT = process.env.PORT || 5000;
 
