@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
+        
         <a href="#top" className="navbar-logo">
           <span className="logo-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
@@ -31,20 +31,20 @@ function Navbar() {
           <span className="logo-text">FlowForge</span>
         </a>
 
-        {/* Navigation Links */}
+       
         <div className="navbar-links">
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
         </div>
 
-        {/* Auth Buttons */}
+       
         <div className="navbar-actions">
           <button className="login-btn">Log in</button>
           <button className="signup-btn">Get Started</button>
         </div>
 
-        {/* Mobile toggle */}
+        
         <button
           className={`navbar-toggle ${menuOpen ? "is-open" : ""}`}
           aria-label="Toggle navigation menu"
@@ -57,7 +57,7 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+     
       <div className={`navbar-mobile ${menuOpen ? "is-open" : ""}`}>
         <a href="#features" onClick={() => setMenuOpen(false)}>
           Features
