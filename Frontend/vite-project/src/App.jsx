@@ -7,9 +7,7 @@ const App = () => {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <BrowserRouter>
-        <Approutes />
-      </BrowserRouter>
+      <Approutes />
     </div>
   );
 };

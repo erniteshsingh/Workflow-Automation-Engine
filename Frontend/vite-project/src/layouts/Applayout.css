@@ -1,0 +1,215 @@
+:root {
+    --sidebar-bg: #111827;
+    --sidebar-bg-soft: #171f2e;
+    --sidebar-border: #262e3d;
+    --sidebar-text: #9ca3af;
+    --sidebar-text-hover: #ffffff;
+    --accent-start: #8b7ff7;
+    --accent-end: #6d5ef5;
+    --accent-tint-dark: rgba(139, 127, 247, 0.14);
+    --content-bg: #f8fafc;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .app-layout {
+    min-height: 100vh;
+    display: flex;
+    background-color: var(--content-bg);
+  }
+  
+  /* Topbar (mobile only) */
+  
+  .app-topbar {
+    display: none;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background-color: var(--sidebar-bg);
+    border-bottom: 1px solid var(--sidebar-border);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+  
+  .sidebar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
+  
+  .topbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  
+  .topbar-logo-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Sidebar */
+  
+  .app-sidebar {
+    width: 240px;
+    min-height: 100vh;
+    padding: 24px 14px;
+    background-color: var(--sidebar-bg);
+    background-image: linear-gradient(180deg, var(--sidebar-bg-soft) 0%, var(--sidebar-bg) 100%);
+    border-right: 1px solid var(--sidebar-border);
+    flex-shrink: 0;
+  }
+  
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .sidebar-logo-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 9px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: background-color 0.18s ease, color 0.18s ease;
+  }
+  
+  .sidebar-link-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #1f2937;
+    color: var(--sidebar-text-hover);
+  }
+  
+  .sidebar-link.is-active {
+    background-color: var(--accent-tint-dark);
+    color: #ffffff;
+  }
+  
+  .sidebar-link.is-active::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    border-radius: 0 3px 3px 0;
+    background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
+  }
+  
+  .sidebar-link:focus-visible {
+    outline: 2px solid var(--accent-start);
+    outline-offset: 2px;
+  }
+  
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  /* Content */
+  
+  .app-content {
+    flex: 1;
+    padding: 32px;
+    min-width: 0;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 900px) {
+    .app-layout {
+      flex-direction: column;
+    }
+  
+    .app-topbar {
+      display: flex;
+    }
+  
+    .app-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      z-index: 40;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+    }
+  
+    .app-sidebar.is-open {
+      transform: translateX(0);
+    }
+  
+    .sidebar-logo {
+      display: none;
+    }
+  
+    .sidebar-overlay {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 35;
+    }
+  
+    .app-content {
+      padding: 24px 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app-content {
+      padding: 20px 16px;
+    }
+  }

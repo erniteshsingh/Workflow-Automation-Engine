@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -7,7 +8,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        
         <a href="#top" className="navbar-logo">
           <span className="logo-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
@@ -31,20 +31,21 @@ function Navbar() {
           <span className="logo-text">FlowForge</span>
         </a>
 
-       
         <div className="navbar-links">
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
         </div>
 
-       
         <div className="navbar-actions">
-          <button className="login-btn">Log in</button>
-          <button className="signup-btn">Get Started</button>
-        </div>
+          <Link to="/login" className="login-btn">
+            Log in
+          </Link>
 
-        
+          <Link to="/register" className="signup-btn">
+            Get Started
+          </Link>
+        </div>
         <button
           className={`navbar-toggle ${menuOpen ? "is-open" : ""}`}
           aria-label="Toggle navigation menu"
@@ -57,7 +58,6 @@ function Navbar() {
         </button>
       </div>
 
-     
       <div className={`navbar-mobile ${menuOpen ? "is-open" : ""}`}>
         <a href="#features" onClick={() => setMenuOpen(false)}>
           Features
@@ -69,8 +69,13 @@ function Navbar() {
           Pricing
         </a>
         <div className="navbar-mobile-actions">
-          <button className="login-btn">Log in</button>
-          <button className="signup-btn">Get Started</button>
+          <Link to="/login" className="login-btn">
+            Log in
+          </Link>
+
+          <Link to="/register" className="signup-btn">
+            Get Started
+          </Link>
         </div>
       </div>
     </nav>
