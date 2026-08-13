@@ -14,6 +14,7 @@ import AppLayout from "../layouts/AppLayout";
 import ProtectedRoute from "./ProtectedRoute";
 
 import NotFound from "../pages/notfound/NotFound";
+import Profile from "../pages/profile/Profile";
 
 const AppRoutes = () => {
   return (
@@ -33,6 +34,7 @@ const AppRoutes = () => {
           <Route path="/workflows/:workflowId" element={<WorkflowBuilder />} />
 
           <Route path="/executions" element={<Executions />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Route>
 
