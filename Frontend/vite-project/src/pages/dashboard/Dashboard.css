@@ -1,0 +1,407 @@
+:root {
+    --ink: #0f1115;
+    --ink-soft: #4b5566;
+    --ink-faint: #6b7280;
+    --border: #e5e7eb;
+    --surface: #ffffff;
+    --bg-tint: #f9fafb;
+    --accent-start: #8b7ff7;
+    --accent-end: #6d5ef5;
+    --accent-tint: #f0eefe;
+    --success: #16a34a;
+    --success-tint: #f0fdf4;
+    --warning: #d97706;
+    --warning-tint: #fffbeb;
+    --danger: #dc2626;
+    --danger-tint: #fef2f2;
+  }
+  
+  .dashboard-page {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 28px;
+  }
+  
+  .dashboard-eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-end);
+  }
+  
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+  }
+  
+  .dashboard-header p {
+    margin: 6px 0 0;
+    color: var(--ink-faint);
+    font-size: 14px;
+  }
+  
+
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  
+  .stat-card {
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    background-color: var(--bg-tint);
+    color: var(--ink-faint);
+  }
+  
+  .stat-icon.accent {
+    background-color: var(--accent-tint);
+    color: var(--accent-end);
+  }
+  
+  .stat-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+  }
+  
+  .stat-label {
+    font-size: 13px;
+    color: var(--ink-faint);
+    font-weight: 500;
+  }
+
+  
+  .workflows-section-header {
+    margin-bottom: 12px;
+  }
+  
+  .workflows-section-header h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  
+  .workflows-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  .workflow-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.18s ease;
+  }
+  
+  .workflow-row:last-child {
+    border-bottom: none;
+  }
+  
+  .workflow-row:hover {
+    background-color: var(--bg-tint);
+  }
+  
+  .workflow-row-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background-color: var(--accent-tint);
+    color: var(--accent-end);
+  }
+  
+  .workflow-row-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .workflow-row-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  
+  .workflow-row-date {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  
+  .status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+  
+  .status-active {
+    background-color: var(--success-tint);
+    color: var(--success);
+  }
+  
+  .status-paused {
+    background-color: var(--warning-tint);
+    color: var(--warning);
+  }
+  
+  .status-draft {
+    background-color: var(--bg-tint);
+    color: var(--ink-faint);
+  }
+  
+  .status-failed {
+    background-color: var(--danger-tint);
+    color: var(--danger);
+  }
+  
+  .workflow-row-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+    transition: transform 0.18s ease;
+  }
+  
+  .workflow-row:hover .workflow-row-arrow {
+    transform: translateX(3px);
+    color: var(--accent-end);
+  }
+  
+
+  
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 56px 24px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: 14px;
+  }
+  
+  .empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    background-color: var(--accent-tint);
+    color: var(--accent-end);
+  }
+  
+  .empty-state h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  
+  .empty-state p {
+    margin: 0 0 20px;
+    max-width: 320px;
+    font-size: 13.5px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+  
+  .empty-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  
+  .empty-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(109, 94, 245, 0.25);
+  }
+  
+ 
+  
+  .dashboard-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  
+  .error-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background-color: var(--danger-tint);
+    color: var(--danger);
+  }
+  
+  .dashboard-error h2 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  
+  .dashboard-error p {
+    margin: 0 0 20px;
+    max-width: 360px;
+    font-size: 13.5px;
+    color: var(--ink-faint);
+  }
+  
+  .retry-btn {
+    padding: 10px 22px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background-color: var(--surface);
+    color: var(--ink);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.18s ease, background-color 0.18s ease;
+  }
+  
+  .retry-btn:hover {
+    border-color: #d6d3fb;
+    background-color: var(--bg-tint);
+  }
+  
+
+  
+  .skeleton-line {
+    background: linear-gradient(90deg, #eceef2 25%, #f4f5f7 37%, #eceef2 63%);
+    background-size: 400% 100%;
+    animation: skeletonShimmer 1.4s ease infinite;
+    border-radius: 6px;
+  }
+  
+  .skeleton-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .skeleton-number {
+    width: 50px;
+    height: 22px;
+  }
+  
+  .skeleton-label {
+    width: 90px;
+    height: 12px;
+  }
+  
+  .skeleton-row {
+    height: 56px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, #f4f5f7 25%, #f9fafb 37%, #f4f5f7 63%);
+    background-size: 400% 100%;
+    animation: skeletonShimmer 1.4s ease infinite;
+  }
+  
+  .skeleton-row:last-child {
+    border-bottom: none;
+  }
+  
+  .workflows-card.skeleton {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  @keyframes skeletonShimmer {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton-line,
+    .skeleton-row {
+      animation: none;
+    }
+  }
+  
+
+  
+  @media (max-width: 720px) {
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .workflow-row {
+      padding: 14px 16px;
+    }
+    .workflow-row-meta {
+      display: none;
+    }
+  }
