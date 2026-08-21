@@ -1,0 +1,404 @@
+:root {
+    --create-bg: #f8fafc;
+    --create-card: #ffffff;
+    --create-border: #e5e7eb;
+    --create-text: #111827;
+    --create-muted: #6b7280;
+  
+    --accent-start: #8b7ff7;
+    --accent-end: #6d5ef5;
+    --accent-soft: rgba(139, 127, 247, 0.12);
+  
+    --danger: #dc2626;
+    --danger-soft: #fef2f2;
+    --warning: #d97706;
+  }
+  
+  .create-workflow-page {
+    min-height: 100%;
+    padding: 10px 0 40px;
+    color: var(--create-text);
+  }
+  
+  .create-workflow-container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  
+ 
+  
+  .create-workflow-header {
+    margin-bottom: 28px;
+  }
+  
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 24px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--create-muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.18s ease, transform 0.18s ease;
+  }
+  
+  .back-btn:hover {
+    color: var(--accent-end);
+    transform: translateX(-2px);
+  }
+  
+  .page-eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--accent-end);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
+  .create-workflow-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--create-text);
+  }
+  
+  .create-workflow-header > p {
+    margin: 8px 0 0;
+    color: var(--create-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+
+  
+  .create-workflow-card {
+    padding: 32px;
+    background: var(--create-card);
+    border: 1px solid var(--create-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+  }
+  
+  .form-icon-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-bottom: 18px;
+  }
+  
+  .form-icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(109, 94, 245, 0.28);
+  }
+  
+  .form-heading {
+    margin-bottom: 26px;
+  }
+  
+  .form-heading h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--create-text);
+  }
+  
+  .form-heading p {
+    margin: 6px 0 0;
+    color: var(--create-muted);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+ 
+  
+  .create-workflow-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    border: 1px solid #fecaca;
+    border-radius: 9px;
+    background: var(--danger-soft);
+    color: var(--danger);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .error-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--danger);
+    color: #ffffff;
+  }
+  
+  
+  
+  .form-group {
+    margin-bottom: 22px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--create-text);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .form-group label span {
+    margin-left: 3px;
+    color: var(--danger);
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--create-border);
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--create-text);
+    font-family: inherit;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  
+  .form-group input {
+    height: 44px;
+    padding: 0 14px;
+  }
+  
+  .form-group textarea {
+    min-height: 120px;
+    padding: 12px 14px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #b0b5bf;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent-end);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  
+  .form-group input:disabled,
+  .form-group textarea:disabled {
+    background: #f9fafb;
+    cursor: not-allowed;
+  }
+  
+  .input-footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 7px;
+  }
+  
+  .input-footer small {
+    color: #9ca3af;
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  
+  .input-footer span {
+    flex-shrink: 0;
+    color: #9ca3af;
+    font-size: 11.5px;
+    font-weight: 500;
+    transition: color 0.18s ease;
+  }
+  
+  .char-count-warning {
+    color: var(--warning) !important;
+    font-weight: 700 !important;
+  }
+  
+  
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid #f0f1f3;
+  }
+  
+  .cancel-btn,
+  .submit-workflow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 9px 18px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  
+  .cancel-btn {
+    border: 1px solid var(--create-border);
+    background: #ffffff;
+    color: var(--create-text);
+  }
+  
+  .cancel-btn:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #d1d5db;
+  }
+  
+  .submit-workflow-btn {
+    border: none;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(109, 94, 245, 0.22);
+  }
+  
+  .submit-workflow-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(109, 94, 245, 0.3);
+  }
+  
+  .cancel-btn:disabled,
+  .submit-workflow-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .cancel-btn:focus-visible,
+  .submit-workflow-btn:focus-visible,
+  .back-btn:focus-visible {
+    outline: 2px solid var(--accent-end);
+    outline-offset: 2px;
+  }
+  
+
+  
+  .button-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: buttonSpin 0.7s linear infinite;
+  }
+  
+  @keyframes buttonSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .button-spinner {
+      animation: none;
+    }
+  }
+  
+ 
+  
+  .create-workflow-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 16px 18px;
+    border: 1px solid #e9e7ff;
+    border-radius: 12px;
+    background: #faf9ff;
+  }
+  
+  .tip-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background-color: var(--accent-soft);
+    color: var(--accent-end);
+  }
+  
+  .create-workflow-tip strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--create-text);
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  
+  .create-workflow-tip p {
+    margin: 0;
+    color: var(--create-muted);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  
+  
+  
+  @media (max-width: 600px) {
+    .create-workflow-page {
+      padding: 0 0 30px;
+    }
+  
+    .create-workflow-card {
+      padding: 24px 20px;
+    }
+  
+    .create-workflow-header h1 {
+      font-size: 26px;
+    }
+  
+    .form-actions {
+      flex-direction: column-reverse;
+    }
+  
+    .cancel-btn,
+    .submit-workflow-btn {
+      width: 100%;
+    }
+  
+    .input-footer {
+      flex-direction: column;
+      gap: 4px;
+    }
+  
+    .create-workflow-tip {
+      padding: 14px 15px;
+    }
+  }

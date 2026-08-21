@@ -63,7 +63,7 @@ const Dashboard = () => {
         },
       );
 
-      console.log("Workflows response:", response.data);
+    
 
       const data = response.data?.data;
 
